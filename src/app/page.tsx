@@ -281,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 pt-16 pb-24 md:pb-8 px-8 md:px-16 lg:px-24">
+      <footer className="relative z-10 pt-16 pb-8 px-8 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Footer grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
@@ -351,14 +351,6 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Sticky CTA — mobile only */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-        <div className="bg-background/80 backdrop-blur-xl border-t border-white/5 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
-          <button aria-label="Получить ранний доступ к NeoBank" className="btn-glow bg-accent hover:bg-accent-hover text-white font-semibold w-full py-3.5 rounded-full text-base transition-all">
-            Получить ранний доступ
-          </button>
-        </div>
-      </div>
     </main>
   );
 }
