@@ -57,7 +57,7 @@ function formatBalance(n: number) {
 
 export default function PhoneMockup() {
   const time = useCurrentTime();
-
+  const { value: balance, ref: balanceRef } = useAnimatedNumber(124850);
 
   return (
     <div className="phone-wrapper">
@@ -95,10 +95,10 @@ export default function PhoneMockup() {
           <p className="text-white text-sm font-semibold mb-3">Андрей</p>
 
           {/* Balance card */}
-          <div className="glass-strong rounded-2xl p-3 mb-3">
+          <div ref={balanceRef} className="glass-strong rounded-2xl p-3 mb-3">
             <p className="text-slate-400 text-[10px] mb-1">Основной счёт</p>
             <p className="text-white text-xl font-bold tracking-tight">
-              ₽ 124 850<span className="text-sm text-slate-400">,00</span>
+              ₽ {formatBalance(balance)}<span className="text-sm text-slate-400">,00</span>
             </p>
             <div className="flex gap-3 mt-2">
               <button className="bg-accent/10 text-accent text-[9px] px-3 py-1.5 rounded-full font-medium">
