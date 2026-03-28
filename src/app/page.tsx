@@ -325,7 +325,7 @@ export default function Home() {
           </div>
 
           {/* Bottom bar */}
-          <div className="pt-6 flex items-center justify-center">
+          <div className="pt-6 pb-[env(safe-area-inset-bottom)] flex items-center justify-center">
             <p className="text-slate-400/50 text-xs">
               © 2026 NeoBank. Все права защищены. Лицензия Банка России №XXXX
             </p>

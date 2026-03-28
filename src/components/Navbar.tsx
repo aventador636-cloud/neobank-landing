@@ -13,7 +13,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="relative z-50 flex items-center justify-between px-8 md:px-16 py-5">
+    <nav className="relative z-50 flex items-center justify-between px-8 md:px-16 py-5 pt-[max(1.25rem,env(safe-area-inset-top))]">
       <LogoWordmark iconSize={36} />
 
       {/* Desktop links */}
