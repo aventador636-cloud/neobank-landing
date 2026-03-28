@@ -1,21 +1,54 @@
 "use client";
 
+import { useRef, useState } from "react";
+
 export default function HeroCard() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [spinning, setSpinning] = useState(false);
+
+  const handleTap = () => {
+    if (spinning) return;
+    setSpinning(true);
+    const el = cardRef.current;
+    if (!el) return;
+
+    el.style.animation = "none";
+    // Force reflow
+    void el.offsetHeight;
+    el.style.animation = "card-spin-360 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards";
+
+    const onEnd = () => {
+      el.style.animation = "";
+      setSpinning(false);
+      el.removeEventListener("animationend", onEnd);
+    };
+    el.addEventListener("animationend", onEnd);
+  };
+
   return (
     <div className="relative flex justify-center lg:hidden py-4">
       {/* Glow behind card */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-64 h-32 bg-accent/10 rounded-full blur-[80px]" />
+        <div
+          className="w-64 h-32 bg-accent/10 rounded-full blur-[80px] transition-all duration-700"
+          style={spinning ? { opacity: 1, transform: "scale(1.3)" } : undefined}
+        />
       </div>
 
-      <div className="card-3d-wrap w-64 animate-float">
+      <div
+        className="w-64 animate-float cursor-pointer"
+        style={{ perspective: "800px" }}
+        onClick={handleTap}
+      >
         <div
+          ref={cardRef}
           className="card-3d w-full rounded-xl relative overflow-hidden aspect-[1.586/1]"
           style={{
             background:
               "linear-gradient(145deg, #1a1a1e 0%, #222226 20%, #1c1c20 40%, #252529 60%, #1e1e22 80%, #1a1a1e 100%)",
             boxShadow:
               "0 8px 24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(0,0,0,0.4)",
+            transformStyle: "preserve-3d",
           }}
         >
           {/* Brushed metal texture */}
