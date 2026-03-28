@@ -326,6 +326,23 @@ body {
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
 }
 
+/* Feature card animations — paused until in viewport */
+.feature-icon [class*="animate-"] {
+  animation-play-state: paused;
+}
+.feature-icon.in-view [class*="animate-"] {
+  animation-play-state: running;
+}
+
+/* Reduced motion — disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* No grid pattern — clean and airy */
 .grid-pattern {
   display: none;

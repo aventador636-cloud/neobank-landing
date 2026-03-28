@@ -57,7 +57,6 @@ function formatBalance(n: number) {
 
 export default function PhoneMockup() {
   const time = useCurrentTime();
-  const { value: balance, ref: balanceRef } = useAnimatedNumber(124850, 2000);
 
 
   return (
@@ -96,11 +95,10 @@ export default function PhoneMockup() {
           <p className="text-white text-sm font-semibold mb-3">Андрей</p>
 
           {/* Balance card */}
-          <div ref={balanceRef} className="glass-strong rounded-2xl p-3 mb-3">
+          <div className="glass-strong rounded-2xl p-3 mb-3">
             <p className="text-slate-400 text-[10px] mb-1">Основной счёт</p>
             <p className="text-white text-xl font-bold tracking-tight">
-              ₽ {formatBalance(balance)}
-              <span className="text-sm text-slate-400">.00</span>
+              ₽ 124 850<span className="text-sm text-slate-400">,00</span>
             </p>
             <div className="flex gap-3 mt-2">
               <button className="bg-accent/10 text-accent text-[9px] px-3 py-1.5 rounded-full font-medium">
@@ -127,7 +125,6 @@ export default function PhoneMockup() {
               <line x1="5" y1="50" x2="95" y2="50" /><line x1="50" y1="5" x2="50" y2="95" />
               <line x1="15" y1="15" x2="85" y2="85" /><line x1="85" y1="15" x2="15" y2="85" />
             </svg>
-            <div className="card-shimmer" />
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div className="flex items-center justify-between">
                 <p className="text-white/40 text-[8px] font-semibold tracking-[0.25em] uppercase">NeoBank</p>
@@ -171,7 +168,6 @@ export default function PhoneMockup() {
               <line x1="80" y1="130" x2="200" y2="52" /><line x1="120" y1="130" x2="200" y2="78" />
               <line x1="160" y1="130" x2="200" y2="104" />
             </svg>
-            <div className="card-shimmer" />
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div className="flex items-center justify-between">
                 <p className="text-white/40 text-[8px] font-semibold tracking-[0.25em] uppercase">NeoBank</p>
