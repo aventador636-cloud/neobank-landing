@@ -60,7 +60,7 @@ body {
 
 /* Phone responsive scaler — shrinks layout space and visually scales */
 .phone-scaler {
-  --phone-scale: 0.68;
+  --phone-scale: 0.55;
   width: calc(280px * var(--phone-scale));
   height: calc(560px * var(--phone-scale));
   -webkit-transform: translateZ(0);
@@ -74,11 +74,11 @@ body {
 }
 
 @media (min-width: 480px) {
-  .phone-scaler { --phone-scale: 0.78; }
+  .phone-scaler { --phone-scale: 0.65; }
 }
 
 @media (min-width: 640px) {
-  .phone-scaler { --phone-scale: 0.88; }
+  .phone-scaler { --phone-scale: 0.80; }
 }
 
 @media (min-width: 1024px) {
