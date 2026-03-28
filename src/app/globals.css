@@ -312,15 +312,25 @@ body {
   50% { transform: perspective(600px) rotateY(8deg) rotateX(-2deg); }
 }
 
+@keyframes card-rotate-mobile {
+  0%, 100% { transform: perspective(600px) rotateY(-3deg) rotateX(1deg); }
+  50% { transform: perspective(600px) rotateY(3deg) rotateX(-1deg); }
+}
+
 .card-3d-wrap {
   perspective: 800px;
-  overflow: hidden;
   border-radius: 12px;
 }
 
 .card-3d {
   animation: card-rotate 8s ease-in-out infinite;
   transform-style: preserve-3d;
+}
+
+@media (max-width: 1023px) {
+  .card-3d {
+    animation-name: card-rotate-mobile;
+  }
 }
 
 /* Glass shine — disabled */
