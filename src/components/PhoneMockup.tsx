@@ -60,11 +60,11 @@ export default function PhoneMockup() {
   const { value: balance, ref: balanceRef } = useAnimatedNumber(124850);
 
   return (
-    <div className="phone-wrapper phone-entrance">
+    <div className="phone-wrapper">
       {/* Glow ring */}
       <div className="phone-glow" />
 
-      <div className="phone-mockup phone-3d phone-entrance-delay">
+      <div className="phone-mockup phone-3d">
         {/* Status bar */}
         <div className="absolute top-0 left-0 right-0 h-12 flex items-end justify-between px-6 pb-1 text-[10px] text-slate-400 z-5">
           <span>{time}</span>

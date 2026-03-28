@@ -87,132 +87,79 @@ body {
 /* Phone wrapper — holds glow + phone */
 .phone-wrapper {
   position: relative;
-  perspective: 1200px;
+  perspective: 1000px;
 }
 
-/* Glow ring behind phone — soft ambient */
+/* Glow ring behind phone */
 .phone-glow {
   position: absolute;
-  inset: -24px;
+  inset: -20px;
   border-radius: 56px;
   background: radial-gradient(
     ellipse at center,
-    rgba(124, 140, 245, 0.10) 0%,
-    rgba(124, 140, 245, 0.03) 50%,
+    rgba(124, 140, 245, 0.12) 0%,
+    rgba(124, 140, 245, 0.04) 40%,
     transparent 70%
   );
-  filter: blur(24px);
-  animation: glow-pulse 5s ease-in-out infinite;
+  filter: blur(20px);
+  animation: glow-pulse 4s ease-in-out infinite;
   pointer-events: none;
 }
 
-/* On mobile, simplify glow to prevent GPU artifacts */
+/* On mobile, disable glow animation and reduce blur to prevent GPU artifacts */
 @media (max-width: 1023px) {
   .phone-glow {
-    filter: blur(12px);
+    filter: blur(10px);
     animation: none;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.03); }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
 }
 
-/* Phone mockup — premium device frame */
+/* Phone mockup — solid dark (no backdrop-filter to avoid mobile GPU artifacts) */
 .phone-mockup {
   width: 280px;
   height: 560px;
-  background: #0c0d11;
+  background: #111318;
   border-radius: 40px;
   border: none;
-  /* Multi-layered progressive shadow — Josh Comeau technique */
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.10),
-    0 4px 8px rgba(0, 0, 0, 0.09),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    0 16px 32px rgba(0, 0, 0, 0.07),
-    0 32px 64px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 25px 60px -15px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   position: relative;
   overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
-/* Glass edge highlight — simulates light catching the bezel */
-.phone-mockup::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 40px;
-  border: 1px solid transparent;
-  background:
-    linear-gradient(
-      160deg,
-      rgba(255, 255, 255, 0.10) 0%,
-      rgba(255, 255, 255, 0.03) 20%,
-      transparent 45%,
-      transparent 80%,
-      rgba(255, 255, 255, 0.02) 100%
-    );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  padding: 1px;
-  pointer-events: none;
-  z-index: 20;
-}
-
-/* Static 3D tilt — premium Revolut-style angle */
+/* 3D tilt — more pronounced on mobile */
 .phone-3d {
-  transform: rotateY(-6deg) rotateX(2deg);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: perspective(800px) rotateY(-12deg) rotateX(4deg) rotateZ(2deg);
+  transition: transform 0.6s ease;
 }
 
 @media (min-width: 1024px) {
   .phone-3d {
-    transform: rotateY(-5deg) rotateX(2deg);
+    transform: perspective(1000px) rotateY(-6deg) rotateX(2deg);
   }
 }
 
-/* Dynamic Island — realistic style */
 .phone-mockup::before {
   content: "";
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 26px;
-  background: #000;
-  border-radius: 20px;
+  width: 80px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
   z-index: 10;
-  box-shadow:
-    inset 0 0 4px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
-}
-
-/* Fade-in + slide-up entrance animation */
-@keyframes phone-enter {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.phone-entrance {
-  opacity: 0;
-  animation: phone-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.phone-entrance-delay {
-  animation-delay: 0.15s;
 }
 
 /* Premium metal card — dark gunmetal titanium */
@@ -343,6 +290,13 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Disable float on mobile to reduce GPU compositing layers */
+@media (max-width: 1023px) {
+  .animate-float {
+    animation: none;
+  }
 }
 
 /* Icon animations */
