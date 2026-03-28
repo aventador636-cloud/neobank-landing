@@ -116,85 +116,212 @@ export default function PhoneMockup() {
             <p className="text-accent text-[8px] font-medium">+ Добавить</p>
           </div>
 
-          {/* Mastercard — metal */}
+          {/* Mastercard — premium modern */}
           <div className="metal-card relative rounded-xl p-4 mb-2.5 overflow-hidden aspect-[1.586/1]">
             <div className="metal-texture" />
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent z-[2]" />
-            <svg className="absolute -top-2 -right-2 w-24 h-24 opacity-[0.04]" viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="0.3">
-              <circle cx="50" cy="50" r="45" /><circle cx="50" cy="50" r="35" /><circle cx="50" cy="50" r="25" />
-              <line x1="5" y1="50" x2="95" y2="50" /><line x1="50" y1="5" x2="50" y2="95" />
-              <line x1="15" y1="15" x2="85" y2="85" /><line x1="85" y1="15" x2="15" y2="85" />
-            </svg>
+            {/* Top edge highlight — warm */}
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/12 to-transparent z-[2]" />
+            {/* Horizontal ambient glow — right side */}
+            <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-white/[0.03] to-transparent z-[1] pointer-events-none" />
+
             <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Top — chip+contactless left, logo right */}
               <div className="flex items-center justify-between">
-                <p className="text-white/40 text-[8px] font-semibold tracking-[0.25em] uppercase">NeoBank</p>
-                <p className="text-white/25 text-[6px] tracking-[0.2em] uppercase">World Elite</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-6 rounded-[3px] overflow-hidden relative flex-shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#d4b876] via-[#c9a94e] to-[#b8943d]" />
-                  <div className="absolute inset-[1.5px] rounded-[2px] border border-[#a07e2f]/40" />
-                  <div className="absolute top-1/2 left-0 right-0 h-[0.5px] bg-[#a07e2f]/50" />
-                  <div className="absolute top-0 bottom-0 left-1/3 w-[0.5px] bg-[#a07e2f]/40" />
-                  <div className="absolute top-0 bottom-0 left-2/3 w-[0.5px] bg-[#a07e2f]/40" />
+                <div className="flex items-center gap-2">
+                  {/* Chip */}
+                  <div className="w-6 h-[18px] rounded-[2px] overflow-hidden relative flex-shrink-0 opacity-80">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#d4b876] via-[#c9a94e] to-[#b8943d]" />
+                    <div className="absolute inset-[1px] rounded-[1.5px] border border-[#a07e2f]/35" />
+                    <div className="absolute top-1/2 left-0 right-0 h-[0.5px] bg-[#a07e2f]/40" />
+                    <div className="absolute top-0 bottom-0 left-1/3 w-[0.5px] bg-[#a07e2f]/35" />
+                    <div className="absolute top-0 bottom-0 left-2/3 w-[0.5px] bg-[#a07e2f]/35" />
+                  </div>
+                  {/* Contactless */}
+                  <svg className="w-5 h-5 opacity-50" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+                    <path d="M7 15.5a3 3 0 0 1 0-5" /><path d="M10.5 17.5a6 6 0 0 0 0-9" /><path d="M14 19.5a9 9 0 0 0 0-13" /><path d="M17.5 21.5a12 12 0 0 0 0-17" />
+                  </svg>
                 </div>
-                <svg className="w-4 h-4 opacity-40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
-                  <path d="M7 15.5a3 3 0 0 1 0-5" /><path d="M10.5 17.5a6 6 0 0 0 0-9" /><path d="M14 19.5a9 9 0 0 0 0-13" /><path d="M17.5 21.5a12 12 0 0 0 0-17" />
-                </svg>
+                <div className="flex items-center gap-1.5">
+                  <svg width="16" height="16" viewBox="0 0 100 100" fill="none">
+                    <defs>
+                      <linearGradient id="mcLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#4f6ef7" />
+                        <stop offset="100%" stopColor="#3b5de6" />
+                      </linearGradient>
+                      <linearGradient id="mcLogoShine" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
+                        <stop offset="50%" stopColor="rgba(255,255,255,0)" />
+                      </linearGradient>
+                      <linearGradient id="mcShimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(255,255,255,0)">
+                          <animate attributeName="offset" values="-1;2" dur="3s" repeatCount="indefinite" />
+                        </stop>
+                        <stop offset="15%" stopColor="rgba(255,255,255,0.35)">
+                          <animate attributeName="offset" values="-0.85;2.15" dur="3s" repeatCount="indefinite" />
+                        </stop>
+                        <stop offset="30%" stopColor="rgba(255,255,255,0)">
+                          <animate attributeName="offset" values="-0.7;2.3" dur="3s" repeatCount="indefinite" />
+                        </stop>
+                      </linearGradient>
+                      <linearGradient id="mcLetterN" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#ffffff" />
+                        <stop offset="100%" stopColor="#e0e7ff" />
+                      </linearGradient>
+                      <clipPath id="mcLogoClip">
+                        <rect x="4" y="4" width="92" height="92" rx="22" />
+                      </clipPath>
+                      <filter id="mcShadow">
+                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.2" />
+                      </filter>
+                    </defs>
+                    <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#mcLogoBg)" />
+                    <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#mcLogoShine)" />
+                    <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#mcShimmer)" clipPath="url(#mcLogoClip)" />
+                    <ellipse cx="50" cy="52" rx="36" ry="34" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" fill="none" transform="rotate(-15, 50, 52)" />
+                    <g filter="url(#mcShadow)">
+                      <path d="M35 72V32h6l18 28V32h6v40h-6L41 44v28h-6z" fill="url(#mcLetterN)" />
+                    </g>
+                    <circle cx="26" cy="22" r="6" fill="rgba(255,255,255,0.15)" />
+                  </svg>
+                  <p className="text-white/80 text-[9px] font-bold tracking-[0.2em] uppercase">NeoBank</p>
+                </div>
               </div>
-              <p className="card-embossed text-[11px] font-mono tracking-[0.2em]">
+
+              {/* Card number */}
+              <p className="text-white/70 text-[11px] font-mono tracking-[0.2em]">
                 5123 •••• •••• 4287
               </p>
-              <div className="flex justify-between items-center">
+
+              {/* Bottom — cardholder + Mastercard World Elite */}
+              <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-white/20 text-[5px] uppercase tracking-[0.15em] mb-0.5">Valid thru</p>
-                  <p className="card-embossed text-[8px] font-mono">09/28</p>
+                  <p className="text-white/45 text-[6px] uppercase tracking-[0.2em] mb-0.5">Cardholder</p>
+                  <p className="text-white/80 text-[9px] font-semibold tracking-[0.12em] uppercase">Andrey Vlasov</p>
                 </div>
-                <div className="flex -space-x-1.5">
-                  <div className="w-4 h-4 rounded-full mc-circle-left" />
-                  <div className="w-4 h-4 rounded-full mc-circle-right" />
+                <div className="flex flex-col items-end gap-0.5">
+                  {/* MC circles — metallic SVG */}
+                  <svg width="28" height="18" viewBox="0 0 44 28" fill="none">
+                    <defs>
+                      <linearGradient id="mcCircleL" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#d0d0d8" />
+                        <stop offset="40%" stopColor="#909098" />
+                        <stop offset="70%" stopColor="#c8c8d0" />
+                        <stop offset="100%" stopColor="#a0a0a8" />
+                      </linearGradient>
+                      <linearGradient id="mcCircleR" x1="16" y1="0" x2="44" y2="28" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#e0e0e8" />
+                        <stop offset="35%" stopColor="#b0b0bc" />
+                        <stop offset="65%" stopColor="#f0f0f4" />
+                        <stop offset="100%" stopColor="#bcbcc8" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="14" cy="14" r="13" fill="url(#mcCircleL)" opacity="0.85" />
+                    <circle cx="30" cy="14" r="13" fill="url(#mcCircleR)" opacity="0.7" />
+                  </svg>
+                  <p className="text-white/50 text-[5px] tracking-[0.15em] uppercase font-medium">World Elite</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Visa — dark premium */}
+          {/* Visa — premium modern */}
           <div className="visa-card relative rounded-xl p-4 overflow-hidden aspect-[1.586/1]">
             <div className="metal-texture" />
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-[2]" />
-            {/* Subtle diagonal lines pattern */}
-            <svg className="absolute bottom-0 left-0 w-full h-full opacity-[0.03]" viewBox="0 0 200 130" fill="none" stroke="white" strokeWidth="0.3">
-              <line x1="0" y1="130" x2="200" y2="0" /><line x1="40" y1="130" x2="200" y2="26" />
-              <line x1="80" y1="130" x2="200" y2="52" /><line x1="120" y1="130" x2="200" y2="78" />
-              <line x1="160" y1="130" x2="200" y2="104" />
-            </svg>
+            {/* Top edge highlight */}
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent z-[2]" />
+            {/* Geometric shard — accent diagonal */}
+            <div className="visa-card-shard z-[1]" />
+
             <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Top — chip+contactless left, logo right */}
               <div className="flex items-center justify-between">
-                <p className="text-white/40 text-[8px] font-semibold tracking-[0.25em] uppercase">NeoBank</p>
-                <p className="text-white/25 text-[6px] tracking-[0.2em] uppercase">Infinite</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-6 rounded-[3px] overflow-hidden relative flex-shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#d4b876] via-[#c9a94e] to-[#b8943d]" />
-                  <div className="absolute inset-[1.5px] rounded-[2px] border border-[#a07e2f]/40" />
-                  <div className="absolute top-1/2 left-0 right-0 h-[0.5px] bg-[#a07e2f]/50" />
-                  <div className="absolute top-0 bottom-0 left-1/3 w-[0.5px] bg-[#a07e2f]/40" />
-                  <div className="absolute top-0 bottom-0 left-2/3 w-[0.5px] bg-[#a07e2f]/40" />
+                <div className="flex items-center gap-2">
+                  {/* Chip */}
+                  <div className="w-6 h-[18px] rounded-[2px] overflow-hidden relative flex-shrink-0 opacity-80">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#d4b876] via-[#c9a94e] to-[#b8943d]" />
+                    <div className="absolute inset-[1px] rounded-[1.5px] border border-[#a07e2f]/35" />
+                    <div className="absolute top-1/2 left-0 right-0 h-[0.5px] bg-[#a07e2f]/40" />
+                    <div className="absolute top-0 bottom-0 left-1/3 w-[0.5px] bg-[#a07e2f]/35" />
+                    <div className="absolute top-0 bottom-0 left-2/3 w-[0.5px] bg-[#a07e2f]/35" />
+                  </div>
+                  {/* Contactless */}
+                  <svg className="w-5 h-5 opacity-50" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+                    <path d="M7 15.5a3 3 0 0 1 0-5" /><path d="M10.5 17.5a6 6 0 0 0 0-9" /><path d="M14 19.5a9 9 0 0 0 0-13" /><path d="M17.5 21.5a12 12 0 0 0 0-17" />
+                  </svg>
                 </div>
-                <svg className="w-4 h-4 opacity-40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
-                  <path d="M7 15.5a3 3 0 0 1 0-5" /><path d="M10.5 17.5a6 6 0 0 0 0-9" /><path d="M14 19.5a9 9 0 0 0 0-13" /><path d="M17.5 21.5a12 12 0 0 0 0-17" />
-                </svg>
+                <div className="flex items-center gap-1.5">
+                  <svg width="16" height="16" viewBox="0 0 100 100" fill="none">
+                    <defs>
+                      <linearGradient id="cardLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#4f6ef7" />
+                        <stop offset="100%" stopColor="#3b5de6" />
+                      </linearGradient>
+                      <linearGradient id="cardLogoShine" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
+                        <stop offset="50%" stopColor="rgba(255,255,255,0)" />
+                      </linearGradient>
+                      <linearGradient id="cardShimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(255,255,255,0)">
+                          <animate attributeName="offset" values="-1;2" dur="3s" repeatCount="indefinite" />
+                        </stop>
+                        <stop offset="15%" stopColor="rgba(255,255,255,0.35)">
+                          <animate attributeName="offset" values="-0.85;2.15" dur="3s" repeatCount="indefinite" />
+                        </stop>
+                        <stop offset="30%" stopColor="rgba(255,255,255,0)">
+                          <animate attributeName="offset" values="-0.7;2.3" dur="3s" repeatCount="indefinite" />
+                        </stop>
+                      </linearGradient>
+                      <linearGradient id="cardLetterN" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#ffffff" />
+                        <stop offset="100%" stopColor="#e0e7ff" />
+                      </linearGradient>
+                      <clipPath id="cardLogoClip">
+                        <rect x="4" y="4" width="92" height="92" rx="22" />
+                      </clipPath>
+                      <filter id="cardShadow">
+                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.2" />
+                      </filter>
+                    </defs>
+                    <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#cardLogoBg)" />
+                    <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#cardLogoShine)" />
+                    <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#cardShimmer)" clipPath="url(#cardLogoClip)" />
+                    <ellipse cx="50" cy="52" rx="36" ry="34" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" fill="none" transform="rotate(-15, 50, 52)" />
+                    <g filter="url(#cardShadow)">
+                      <path d="M35 72V32h6l18 28V32h6v40h-6L41 44v28h-6z" fill="url(#cardLetterN)" />
+                    </g>
+                    <circle cx="26" cy="22" r="6" fill="rgba(255,255,255,0.15)" />
+                  </svg>
+                  <p className="text-white/80 text-[9px] font-bold tracking-[0.2em] uppercase">NeoBank</p>
+                </div>
               </div>
-              <p className="card-embossed text-[11px] font-mono tracking-[0.2em]">
+
+              {/* Card number */}
+              <p className="text-white/70 text-[11px] font-mono tracking-[0.2em]">
                 4276 •••• •••• 9031
               </p>
-              <div className="flex justify-between items-center">
+
+              {/* Bottom — cardholder + Visa Infinite */}
+              <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-white/20 text-[5px] uppercase tracking-[0.15em] mb-0.5">Valid thru</p>
-                  <p className="card-embossed text-[8px] font-mono">11/29</p>
+                  <p className="text-white/45 text-[6px] uppercase tracking-[0.2em] mb-0.5">Cardholder</p>
+                  <p className="text-white/80 text-[9px] font-semibold tracking-[0.12em] uppercase">Andrey Vlasov</p>
                 </div>
-                {/* Visa logo — metallic */}
-                <p className="visa-logo text-[13px] font-bold italic tracking-wide">VISA</p>
+                <div className="flex flex-col items-end">
+                  <svg width="48" height="20" viewBox="0 0 48 20" fill="none">
+                    <defs>
+                      <linearGradient id="visaMetal" x1="0" y1="0" x2="48" y2="20" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#e8e8f0" />
+                        <stop offset="20%" stopColor="#a0a0b0" />
+                        <stop offset="40%" stopColor="#f4f4fc" />
+                        <stop offset="60%" stopColor="#b0b0c0" />
+                        <stop offset="80%" stopColor="#e0e0ec" />
+                        <stop offset="100%" stopColor="#c8c8d4" />
+                      </linearGradient>
+                    </defs>
+                    <text x="48" y="15" textAnchor="end" fontFamily="system-ui, sans-serif" fontSize="17" fontWeight="700" fontStyle="italic" letterSpacing="1" fill="url(#visaMetal)">VISA</text>
+                  </svg>
+                  <p className="text-white/50 text-[6px] tracking-[0.2em] uppercase -mt-0.5 font-medium">Infinite</p>
+                </div>
               </div>
             </div>
           </div>
