@@ -15,12 +15,6 @@ export default function Home() {
       <section className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-10 lg:pb-24 gap-10 lg:gap-8 max-w-7xl mx-auto">
         {/* Left — text content */}
         <div className="flex flex-col gap-7 max-w-xl text-center lg:text-left">
-          {/* Badge */}
-          <div className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs text-slate-400 w-fit mx-auto lg:mx-0">
-            <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-            Открыт ранний доступ
-          </div>
-
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground">
             Банк, который
             <br />
@@ -35,9 +29,6 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button aria-label="Получить ранний доступ к NeoBank" className="btn-glow bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-3.5 rounded-full text-base transition-all">
-              Получить ранний доступ
-            </button>
             <button aria-label="Узнать больше о NeoBank" className="glass text-slate-300 hover:text-foreground px-8 py-3.5 rounded-full text-base transition-all hover:bg-white/[0.06] font-medium">
               Узнать больше
             </button>
