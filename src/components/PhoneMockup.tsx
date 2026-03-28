@@ -195,8 +195,7 @@ export default function PhoneMockup() {
               {/* Bottom — cardholder + Mastercard World Elite */}
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-white/45 text-[6px] uppercase tracking-[0.2em] mb-0.5">Cardholder</p>
-                  <p className="text-white/80 text-[9px] font-semibold tracking-[0.12em] uppercase">Andrey Vlasov</p>
+                  <p className="text-white/80 text-[9px] font-semibold tracking-[0.12em] uppercase">Cardholder Name</p>
                 </div>
                 <div className="flex flex-col items-end gap-0.5">
                   {/* MC circles — metallic SVG */}
@@ -303,8 +302,7 @@ export default function PhoneMockup() {
               {/* Bottom — cardholder + Visa Infinite */}
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-white/45 text-[6px] uppercase tracking-[0.2em] mb-0.5">Cardholder</p>
-                  <p className="text-white/80 text-[9px] font-semibold tracking-[0.12em] uppercase">Andrey Vlasov</p>
+                  <p className="text-white/80 text-[9px] font-semibold tracking-[0.12em] uppercase">Cardholder Name</p>
                 </div>
                 <div className="flex flex-col items-end">
                   <svg width="48" height="20" viewBox="0 0 48 20" fill="none">
