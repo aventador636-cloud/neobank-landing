@@ -132,10 +132,16 @@ body {
   will-change: transform;
 }
 
-/* 3D subtle tilt */
+/* 3D tilt — more pronounced on mobile */
 .phone-3d {
-  transform: rotateY(-4deg) rotateX(2deg);
+  transform: perspective(800px) rotateY(-12deg) rotateX(4deg) rotateZ(2deg);
   transition: transform 0.6s ease;
+}
+
+@media (min-width: 1024px) {
+  .phone-3d {
+    transform: perspective(1000px) rotateY(-6deg) rotateX(2deg);
+  }
 }
 
 .phone-mockup::before {
