@@ -17,11 +17,12 @@ export default function Home() {
       <section className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-10 lg:pb-24 gap-6 lg:gap-8 max-w-7xl mx-auto">
         {/* Left — text content */}
         <div className="flex flex-col gap-6 max-w-xl text-center lg:text-left">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground">
-            Банк, который
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-indigo-300">
-              работает на тебя
+          <h1 className="leading-[1.1] tracking-tight text-foreground">
+            <span className="block text-3xl md:text-5xl lg:text-6xl font-bold">
+              Всё просто.
+            </span>
+            <span className="block text-4xl md:text-6xl lg:text-7xl font-extrabold mt-2 text-transparent bg-clip-text bg-gradient-to-r from-accent to-indigo-300">
+              Это банк.
             </span>
           </h1>
 
