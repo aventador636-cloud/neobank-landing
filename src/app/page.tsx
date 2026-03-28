@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-white/5 pt-16 pb-8 px-8 md:px-16 lg:px-24">
+      <footer className="relative z-10 border-t border-white/5 pt-16 pb-24 md:pb-8 px-8 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Footer grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
