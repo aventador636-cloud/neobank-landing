@@ -312,13 +312,6 @@ body {
   50% { transform: perspective(600px) rotateY(8deg) rotateX(-2deg); }
 }
 
-/* Tap to spin 360° */
-@keyframes card-spin-360 {
-  0% { transform: perspective(800px) rotateY(0deg) scale(1); }
-  40% { transform: perspective(800px) rotateY(180deg) scale(1.05); }
-  100% { transform: perspective(800px) rotateY(360deg) scale(1); }
-}
-
 .card-3d-wrap {
   perspective: 800px;
   overflow: hidden;
