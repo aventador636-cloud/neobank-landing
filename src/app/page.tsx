@@ -277,6 +277,99 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Footer */}
+      <footer className="relative z-10 border-t border-white/5 pt-16 pb-8 px-8 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto">
+          {/* Footer grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+            {/* Brand */}
+            <div className="col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                  <defs>
+                    <linearGradient id="footerLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#4f6ef7" />
+                      <stop offset="100%" stopColor="#3b5de6" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="4" y="4" width="92" height="92" rx="22" fill="url(#footerLogoBg)" />
+                  <path d="M35 72V32h6l18 28V32h6v40h-6L41 44v28h-6z" fill="white" />
+                </svg>
+                <span className="font-bold text-base text-white">NeoBank</span>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed max-w-[240px]">
+                Современный цифровой банк для тех, кто ценит скорость, прозрачность и удобство.
+              </p>
+            </div>
+
+            {/* Продукт */}
+            <div>
+              <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-4">Продукт</p>
+              <ul className="flex flex-col gap-2.5">
+                {["Дебетовая карта", "Переводы", "Вклады", "Кэшбэк", "Подписка Premium"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Компания */}
+            <div>
+              <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-4">Компания</p>
+              <ul className="flex flex-col gap-2.5">
+                {["О нас", "Карьера", "Блог", "Пресс-центр", "Контакты"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Правовая информация */}
+            <div>
+              <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-4">Документы</p>
+              <ul className="flex flex-col gap-2.5">
+                {["Пользовательское соглашение", "Политика конфиденциальности", "Тарифы", "Раскрытие информации", "Лицензии"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-slate-400/50 text-xs">
+              © 2026 NeoBank. Все права защищены. Лицензия Банка России №XXXX
+            </p>
+
+            {/* Соцсети */}
+            <div className="flex items-center gap-3">
+              {/* Telegram */}
+              <a href="#" aria-label="Telegram" className="w-9 h-9 rounded-xl flex items-center justify-center transition-all hover:scale-110" style={{ background: "linear-gradient(135deg, #2AABEE, #229ED9)" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+              </a>
+              {/* VK */}
+              <a href="#" aria-label="VKontakte" className="w-9 h-9 rounded-xl flex items-center justify-center transition-all hover:scale-110" style={{ background: "linear-gradient(135deg, #5181B8, #4A76A8)" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                  <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.847 2.456 2.27 4.607 2.862 4.607.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.15-3.574 2.15-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/>
+                </svg>
+              </a>
+              {/* YouTube */}
+              <a href="#" aria-label="YouTube" className="w-9 h-9 rounded-xl flex items-center justify-center transition-all hover:scale-110" style={{ background: "linear-gradient(135deg, #FF0000, #CC0000)" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
       {/* Sticky CTA — mobile only */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
         <div className="bg-background/80 backdrop-blur-xl border-t border-white/5 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
