@@ -48,7 +48,7 @@ export default function Home() {
           {/* Soft glow behind phone */}
           <div className="absolute inset-0 bg-accent/5 rounded-full blur-[100px] scale-150" />
 
-          <div className="relative">
+          <div className="relative phone-scaler animate-float">
             <PhoneMockup />
           </div>
         </div>

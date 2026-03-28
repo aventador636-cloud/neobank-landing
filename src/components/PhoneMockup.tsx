@@ -60,7 +60,7 @@ export default function PhoneMockup() {
 
 
   return (
-    <div className="phone-wrapper animate-float">
+    <div className="phone-wrapper">
       {/* Glow ring */}
       <div className="phone-glow" />
 
@@ -138,8 +138,8 @@ export default function PhoneMockup() {
                   <div className="absolute top-0 bottom-0 left-1/3 w-[0.5px] bg-[#a07e2f]/40" />
                   <div className="absolute top-0 bottom-0 left-2/3 w-[0.5px] bg-[#a07e2f]/40" />
                 </div>
-                <svg className="w-4 h-4 rotate-90 opacity-40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round">
-                  <path d="M6.5 13.5a6 6 0 0 1 0-8.49" /><path d="M9.5 10.5a2.5 2.5 0 0 1 0-3.54" /><path d="M3.5 16.5a9.5 9.5 0 0 1 0-13.44" />
+                <svg className="w-4 h-4 opacity-40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+                  <path d="M7 15.5a3 3 0 0 1 0-5" /><path d="M10.5 17.5a6 6 0 0 0 0-9" /><path d="M14 19.5a9 9 0 0 0 0-13" /><path d="M17.5 21.5a12 12 0 0 0 0-17" />
                 </svg>
               </div>
               <p className="card-embossed text-[11px] font-mono tracking-[0.2em]">
@@ -181,8 +181,8 @@ export default function PhoneMockup() {
                   <div className="absolute top-0 bottom-0 left-1/3 w-[0.5px] bg-[#a07e2f]/40" />
                   <div className="absolute top-0 bottom-0 left-2/3 w-[0.5px] bg-[#a07e2f]/40" />
                 </div>
-                <svg className="w-4 h-4 rotate-90 opacity-40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round">
-                  <path d="M6.5 13.5a6 6 0 0 1 0-8.49" /><path d="M9.5 10.5a2.5 2.5 0 0 1 0-3.54" /><path d="M3.5 16.5a9.5 9.5 0 0 1 0-13.44" />
+                <svg className="w-4 h-4 opacity-40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+                  <path d="M7 15.5a3 3 0 0 1 0-5" /><path d="M10.5 17.5a6 6 0 0 0 0-9" /><path d="M14 19.5a9 9 0 0 0 0-13" /><path d="M17.5 21.5a12 12 0 0 0 0-17" />
                 </svg>
               </div>
               <p className="card-embossed text-[11px] font-mono tracking-[0.2em]">
@@ -200,14 +200,40 @@ export default function PhoneMockup() {
           </div>
 
           {/* Bottom nav */}
-          <div className="flex justify-around pt-3 border-t border-foreground/5 mt-auto">
-            {["Главная", "Карта", "Платежи", "Ещё"].map((label, i) => (
-              <div key={i} className="flex flex-col items-center gap-0.5">
-                <div
-                  className={`w-4 h-4 rounded-full ${i === 0 ? "bg-accent" : "bg-foreground/10"}`}
-                />
+          <div className="flex justify-around pt-3 border-t border-white/[0.06] mt-auto">
+            {[
+              { label: "Главная", icon: (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-4.5v-5.5a1 1 0 00-1-1h-3a1 1 0 00-1 1V21H6a1 1 0 01-1-1V9.5z" />
+                </svg>
+              )},
+              { label: "Карта", icon: (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2.5" />
+                  <path d="M2 10h20" />
+                </svg>
+              )},
+              { label: "Платежи", icon: (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 15l5-5 5 5" />
+                  <path d="M12 10v10" />
+                  <path d="M19.5 7.5c0-2.5-2-4.5-4.5-4.5H9C6.5 3 4.5 5 4.5 7.5" />
+                </svg>
+              )},
+              { label: "Ещё", icon: (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <circle cx="12" cy="6" r="1.5" />
+                  <circle cx="12" cy="12" r="1.5" />
+                  <circle cx="12" cy="18" r="1.5" />
+                </svg>
+              )},
+            ].map(({ label, icon }, i) => (
+              <div key={i} className="flex flex-col items-center gap-1">
+                <div className={i === 0 ? "text-accent" : "text-white/25"}>
+                  {icon}
+                </div>
                 <span
-                  className={`text-[7px] ${i === 0 ? "text-accent" : "text-slate-400"}`}
+                  className={`text-[7px] ${i === 0 ? "text-accent font-medium" : "text-white/30"}`}
                 >
                   {label}
                 </span>

@@ -58,6 +58,30 @@ body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
+/* Phone responsive scaler — shrinks layout space and visually scales */
+.phone-scaler {
+  --phone-scale: 0.68;
+  width: calc(280px * var(--phone-scale));
+  height: calc(560px * var(--phone-scale));
+}
+
+.phone-scaler > .phone-wrapper {
+  transform: scale(var(--phone-scale));
+  transform-origin: top center;
+}
+
+@media (min-width: 480px) {
+  .phone-scaler { --phone-scale: 0.78; }
+}
+
+@media (min-width: 640px) {
+  .phone-scaler { --phone-scale: 0.88; }
+}
+
+@media (min-width: 1024px) {
+  .phone-scaler { --phone-scale: 1; }
+}
+
 /* Phone wrapper — holds glow + phone */
 .phone-wrapper {
   position: relative;
