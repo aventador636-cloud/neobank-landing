@@ -37,7 +37,7 @@ export default function Home() {
         </div>
 
         {/* Right — phone mockup */}
-        <div className="relative flex-shrink-0">
+        <div className="relative flex-shrink-0 flex justify-center lg:block">
           {/* Soft glow behind phone */}
           <div className="absolute inset-0 bg-accent/5 rounded-full blur-[100px] scale-150" />
 
