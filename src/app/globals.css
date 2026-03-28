@@ -70,6 +70,7 @@ body {
 .phone-scaler > .phone-wrapper {
   transform: scale(var(--phone-scale));
   transform-origin: top center;
+  will-change: transform;
 }
 
 @media (min-width: 480px) {
@@ -106,25 +107,18 @@ body {
   pointer-events: none;
 }
 
-/* On mobile, disable glow animation and reduce blur to prevent GPU artifacts */
-@media (max-width: 1023px) {
-  .phone-glow {
-    filter: blur(10px);
-    animation: none;
-    opacity: 0.7;
-  }
-}
-
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.6; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.04); }
 }
 
-/* Phone mockup — solid dark (no backdrop-filter to avoid mobile GPU artifacts) */
+/* Phone mockup — liquid glass dark */
 .phone-mockup {
   width: 280px;
   height: 560px;
-  background: #111318;
+  background: rgba(17, 19, 24, 0.92);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border-radius: 40px;
   border: none;
   box-shadow:
@@ -135,6 +129,7 @@ body {
   overflow: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  will-change: transform;
 }
 
 /* 3D tilt — more pronounced on mobile */
@@ -290,13 +285,6 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-/* Disable float on mobile to reduce GPU compositing layers */
-@media (max-width: 1023px) {
-  .animate-float {
-    animation: none;
-  }
 }
 
 /* Icon animations */
