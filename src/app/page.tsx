@@ -134,8 +134,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Download CTA */}
-      <section className="relative z-10 py-20 px-8 md:px-16 lg:px-24">
+      {/* Download CTA — desktop only (mobile has store buttons in hero) */}
+      <section className="relative z-10 py-20 px-8 md:px-16 lg:px-24 hidden lg:block">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
             Скачай{" "}
