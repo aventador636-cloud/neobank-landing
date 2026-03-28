@@ -147,6 +147,110 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trust bar — partners & licenses */}
+      <section className="relative z-10 border-t border-white/5 py-10">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+          <p className="text-center text-xs text-slate-400/60 uppercase tracking-widest mb-8">
+            Лицензия Банка России №XXXX · Соответствие стандартам
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            {/* ЦБ РФ — стилизованный герб с двуглавым орлом */}
+            <div className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+              <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Щит */}
+                <path d="M13 1L2 6v8c0 7.2 4.7 13.9 11 16 6.3-2.1 11-8.8 11-16V6L13 1z" stroke="#94a3b8" strokeWidth="1.2" fill="none" strokeOpacity="0.7"/>
+                {/* Двуглавый орёл — стилизация */}
+                <path d="M8 11c-1-2 0-4 2-5M18 11c1-2 0-4-2-5" stroke="#94a3b8" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7"/>
+                <path d="M10 8.5c1-0.5 2-0.5 3 0s2 0.5 3 0" stroke="#94a3b8" strokeWidth="0.8" strokeLinecap="round" strokeOpacity="0.7"/>
+                <circle cx="10" cy="10" r="0.8" fill="#94a3b8" fillOpacity="0.7"/>
+                <circle cx="16" cy="10" r="0.8" fill="#94a3b8" fillOpacity="0.7"/>
+                {/* Крылья */}
+                <path d="M6 13c-1.5-1-2-3-1.5-4.5M20 13c1.5-1 2-3 1.5-4.5" stroke="#94a3b8" strokeWidth="0.8" strokeLinecap="round" strokeOpacity="0.6"/>
+                <path d="M7 14l-2-1M19 14l2-1" stroke="#94a3b8" strokeWidth="0.8" strokeLinecap="round" strokeOpacity="0.5"/>
+                {/* Центральный щит */}
+                <rect x="11" y="11" width="4" height="5" rx="0.5" stroke="#94a3b8" strokeWidth="0.8" fill="none" strokeOpacity="0.7"/>
+                <path d="M13 13v2M12 14.5h2" stroke="#94a3b8" strokeWidth="0.6" strokeLinecap="round" strokeOpacity="0.6"/>
+                {/* Хвост */}
+                <path d="M11 17l2 3 2-3" stroke="#94a3b8" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.6"/>
+              </svg>
+              <span className="text-sm font-medium text-slate-400/70">Банк России</span>
+            </div>
+
+            {/* Visa — premium platinum wordmark */}
+            <div className="hover:opacity-90 transition-opacity">
+              <svg width="64" height="22" viewBox="0 0 1000 324" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="visa-premium" x1="0" y1="0" x2="1000" y2="324" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#e2e8f0"/>
+                    <stop offset="25%" stopColor="#94a3b8"/>
+                    <stop offset="50%" stopColor="#f1f5f9"/>
+                    <stop offset="75%" stopColor="#94a3b8"/>
+                    <stop offset="100%" stopColor="#cbd5e1"/>
+                  </linearGradient>
+                </defs>
+                <path d="M431.3 1.5L353.6 322.2H278.1L355.8 1.5H431.3ZM745.5 208.3L783.3 104.5L805.1 208.3H745.5ZM825.7 322.2H893.9L834 1.5H769.8C755.3 1.5 743.1 9.8 737.7 22.7L620.3 322.2H697.4L712.7 280H806.2L825.7 322.2ZM640 215.6C640.3 126.3 516.3 121.4 517.1 81.4C517.4 69.5 528.8 56.8 553.6 53.6C565.9 52.1 600.5 51 639.8 69.1L655.5 2.7C634.8-5.5 608.2-13 575.3-13C502.7-13 451.4 25.4 451 81.9C450.5 124.1 488.8 147.5 518 161.6C548.2 176.1 558.5 185.7 558.3 199C558 219.4 533.8 228.5 511.2 228.9C468.1 229.4 443.4 217.6 423.5 208.7L407.3 277.5C427.4 286.3 465.1 294.1 504.2 294.5C581.3 294.5 639.8 256.5 640 215.6ZM384.7 1.5L268.4 322.2H190.8L133.5 54.4C130.2 41.1 127.3 36.3 117 30.7C100.6 21.8 73.8 13.5 50.4 8.4L52.2 1.5H178.6C194.3 1.5 208.2 11.8 211.7 29.7L242.8 196.9L319.5 1.5H384.7Z" fill="url(#visa-premium)"/>
+              </svg>
+            </div>
+
+            {/* Mastercard — metal premium */}
+            <div className="hover:opacity-90 transition-opacity flex flex-col items-center gap-0.5">
+              <svg width="42" height="26" viewBox="0 0 999 618" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mc-left" x1="73" y1="0" x2="691" y2="618" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#b0b0b0"/>
+                    <stop offset="40%" stopColor="#8a8a8a"/>
+                    <stop offset="60%" stopColor="#d4d4d4"/>
+                    <stop offset="100%" stopColor="#9a9a9a"/>
+                  </linearGradient>
+                  <linearGradient id="mc-right" x1="308" y1="0" x2="926" y2="618" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#c9c9c9"/>
+                    <stop offset="35%" stopColor="#a0a0a0"/>
+                    <stop offset="65%" stopColor="#e0e0e0"/>
+                    <stop offset="100%" stopColor="#a8a8a8"/>
+                  </linearGradient>
+                  <linearGradient id="mc-mid" x1="382" y1="66" x2="618" y2="552" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#d6d6d6"/>
+                    <stop offset="50%" stopColor="#b8b8b8"/>
+                    <stop offset="100%" stopColor="#e8e8e8"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="382" cy="309" r="309" fill="url(#mc-left)" opacity="0.7"/>
+                <circle cx="617" cy="309" r="309" fill="url(#mc-right)" opacity="0.6"/>
+                <path d="M499.6 552.1c71.2-56.7 117.6-144.2 117.6-242.9S570.8 122.9 499.6 66.1C428.3 122.9 382 210.4 382 309.2s46.4 186.3 117.6 242.9z" fill="url(#mc-mid)" opacity="0.8"/>
+              </svg>
+            </div>
+
+            {/* МИР — official logo */}
+            <div className="hover:opacity-80 transition-opacity">
+              <svg width="60" height="18" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                <linearGradient id="mir-grad" x1="370" x2="290" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#1F5CD7"/>
+                  <stop stopColor="#02AEFF" offset="1"/>
+                </linearGradient>
+                <path d="m31 13h33c3 0 12-1 16 13 3 9 7 23 13 44h2c6-22 11-37 13-44 4-14 14-13 18-13h31v96h-32v-57h-2l-17 57h-24l-17-57h-3v57h-31m139-96h32v57h3l21-47c4-9 13-10 13-10h30v96h-32v-57h-2l-21 47c-4 9-14 10-14 10h-30m142-29v29h-30v-50h98c-4 12-18 21-34 21" fill="#0f754e"/>
+                <path d="m382 53c4-18-8-40-34-40h-68c2 21 20 40 39 40" fill="url(#mir-grad)"/>
+              </svg>
+            </div>
+
+            {/* PCI DSS — shield with checkmark */}
+            <div className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Щит */}
+                <path d="M12 1L2 5.5v6.5c0 6.8 4.3 13.2 10 15 5.7-1.8 10-8.2 10-15V5.5L12 1z" stroke="#94a3b8" strokeWidth="1.3" fill="none" strokeOpacity="0.7"/>
+                {/* Внутренний щит */}
+                <path d="M12 4L5 7.5v4.5c0 5 3.2 9.8 7 11 3.8-1.2 7-6 7-11V7.5L12 4z" stroke="#94a3b8" strokeWidth="0.6" fill="none" strokeOpacity="0.35"/>
+                {/* Галочка */}
+                <path d="M8 13l3 3 5-6" stroke="#4ade80" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.7"/>
+              </svg>
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-slate-400/70 leading-tight">PCI DSS</span>
+                <span className="text-[9px] text-slate-400/40 leading-tight">Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
