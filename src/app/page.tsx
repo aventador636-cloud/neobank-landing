@@ -2,6 +2,8 @@ import PhoneMockup from "@/components/PhoneMockup";
 import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import ScrollPhone from "@/components/ScrollPhone";
+import HeroCard from "@/components/HeroCard";
+import StoreButtons from "@/components/StoreButtons";
 
 export default function Home() {
   return (
@@ -12,9 +14,9 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-10 lg:pb-24 gap-10 lg:gap-8 max-w-7xl mx-auto">
+      <section className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-10 lg:pb-24 gap-6 lg:gap-8 max-w-7xl mx-auto">
         {/* Left — text content */}
-        <div className="flex flex-col gap-7 max-w-xl text-center lg:text-left">
+        <div className="flex flex-col gap-6 max-w-xl text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-foreground">
             Банк, который
             <br />
@@ -28,7 +30,12 @@ export default function Home() {
             над деньгами — в одном приложении.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          {/* Floating card — mobile only */}
+          <HeroCard />
+
+          {/* Mobile: store buttons, Desktop: "Узнать больше" */}
+          <StoreButtons className="lg:hidden" />
+          <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-start">
             <button aria-label="Узнать больше о NeoBank" className="glass text-slate-300 hover:text-foreground px-8 py-3.5 rounded-full text-base transition-all hover:bg-white/[0.06] font-medium">
               Узнать больше
             </button>
@@ -36,8 +43,8 @@ export default function Home() {
 
         </div>
 
-        {/* Right — phone mockup */}
-        <div className="relative flex-shrink-0 flex justify-center lg:block">
+        {/* Right — phone mockup (desktop only) */}
+        <div className="relative flex-shrink-0 hidden lg:flex justify-center lg:block">
           {/* Soft glow behind phone */}
           <div className="absolute inset-0 bg-accent/5 rounded-full blur-[100px] scale-150" />
 
@@ -139,31 +146,7 @@ export default function Home() {
           <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-8 font-light">
             Доступно бесплатно на iOS и Android. Открой счёт за пару минут.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            {/* App Store — official style */}
-            <a href="#" aria-label="Скачать в App Store" className="inline-flex items-center gap-3 bg-white text-black rounded-xl px-6 py-3.5 hover:bg-white/90 transition-colors min-w-[168px]">
-              <svg width="22" height="26" viewBox="0 0 384 512" fill="currentColor">
-                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-27.1-46.9-42.2-83.7-45.3-35.3-3-73.7 20.8-87.7 20.8-14.7 0-48.5-19.6-72.6-19.6C78.3 140.5 32 179.5 32 266c0 26.2 4.8 53.3 14.4 81.2 12.8 36.8 59 126.8 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-84.4zM262.5 87.8c28-33.7 24.3-64.6 23.4-75.8-23.3 1.4-50.5 16-66.3 34.4-17.3 20-27.3 44.4-25 72.2 25.5 2 48.8-13.3 67.9-30.8z"/>
-              </svg>
-              <div className="flex flex-col items-start">
-                <span className="text-[10px] leading-tight opacity-70">Загрузите в</span>
-                <span className="text-base font-semibold leading-tight">App Store</span>
-              </div>
-            </a>
-            {/* Google Play — official style */}
-            <a href="#" aria-label="Скачать в Google Play" className="inline-flex items-center gap-3 bg-white text-black rounded-xl px-6 py-3.5 hover:bg-white/90 transition-colors min-w-[168px]">
-              <svg width="22" height="26" viewBox="0 0 512 512" fill="none">
-                <path d="M48 59.5V452.5C48 464.5 56 474 66.5 476L291 256L66.5 36C56 38 48 47.5 48 59.5Z" fill="#4285F4"/>
-                <path d="M291 256L66.5 476C72 478 78 478 84 475L336 331L291 256Z" fill="#34A853"/>
-                <path d="M445 244L380 207L336 331L445 268C456 262 456 250 445 244Z" fill="#FBBC04"/>
-                <path d="M84 37C78 34 72 34 66.5 36L291 256L336 181L84 37Z" fill="#EA4335"/>
-              </svg>
-              <div className="flex flex-col items-start">
-                <span className="text-[10px] leading-tight opacity-70">Доступно в</span>
-                <span className="text-base font-semibold leading-tight">Google Play</span>
-              </div>
-            </a>
-          </div>
+          <StoreButtons />
         </div>
       </section>
 
