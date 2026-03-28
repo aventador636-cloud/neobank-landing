@@ -11,7 +11,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-24 gap-10 lg:gap-8 max-w-7xl mx-auto">
+      <section className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-10 lg:pb-24 gap-10 lg:gap-8 max-w-7xl mx-auto">
         {/* Left — text content */}
         <div className="flex flex-col gap-7 max-w-xl text-center lg:text-left">
           {/* Badge */}
@@ -56,7 +56,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="relative z-10 px-8 md:px-16 lg:px-24 py-24 max-w-7xl mx-auto">
+      <section id="features" className="relative z-10 px-8 md:px-16 lg:px-24 py-12 lg:py-24 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-accent text-base font-medium mb-4 tracking-wide uppercase">
             Возможности
