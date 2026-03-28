@@ -13,7 +13,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="relative z-10 flex items-center justify-between px-8 md:px-16 py-5">
+    <nav className="relative z-50 flex items-center justify-between px-8 md:px-16 py-5">
       <LogoWordmark iconSize={36} />
 
       {/* Desktop links */}
@@ -61,15 +61,23 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile menu backdrop */}
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
       {/* Mobile menu */}
       <div
-        className={`absolute top-full left-0 right-0 md:hidden transition-all duration-300 ${
+        className={`fixed top-[72px] left-0 right-0 z-50 md:hidden transition-all duration-300 ${
           open
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
-        <div className="mx-4 mt-2 glass-strong rounded-2xl p-4 flex flex-col gap-1">
+        <div className="mx-4 mt-2 rounded-2xl p-4 flex flex-col gap-1 bg-background/95 backdrop-blur-2xl border border-white/[0.08] shadow-2xl">
           {navItems.map((item) => (
             <a
               key={item.label}

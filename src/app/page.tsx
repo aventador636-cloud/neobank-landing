@@ -11,7 +11,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-16 md:pt-24 pb-24 gap-16 lg:gap-8 max-w-7xl mx-auto">
+      <section className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-16 lg:px-24 pt-8 lg:pt-24 pb-24 gap-10 lg:gap-8 max-w-7xl mx-auto">
         {/* Left — text content */}
         <div className="flex flex-col gap-7 max-w-xl text-center lg:text-left">
           {/* Badge */}
