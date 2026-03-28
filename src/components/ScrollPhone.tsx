@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ScrollPhone({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return; // Disable scroll effect on mobile to avoid stacking with phone-3d
+
     const el = containerRef.current;
     if (!el) return;
 
@@ -16,19 +26,12 @@ export default function ScrollPhone({ children }: { children: React.ReactNode })
       const rect = el.getBoundingClientRect();
       const vh = window.innerHeight;
 
-      // Element center position relative to viewport (0 = top, 1 = bottom)
       const center = (rect.top + rect.height / 2) / vh;
-      // Normalize to -1 (above) ... 0 (center) ... 1 (below)
       const progress = Math.max(-1, Math.min(1, (center - 0.5) * 2));
 
-      // Parallax — shift Y by up to 30px
       const translateY = progress * -30;
-
-      // Subtle tilt — rotateX ±4°, rotateY ±3°
       const rotateX = progress * 4;
       const rotateY = progress * -3;
-
-      // Subtle scale — slightly bigger at center
       const scale = 1 + (1 - Math.abs(progress)) * 0.03;
 
       el.style.transform = `translateY(${translateY}px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
@@ -41,7 +44,6 @@ export default function ScrollPhone({ children }: { children: React.ReactNode })
       raf = requestAnimationFrame(update);
     };
 
-    // Initial position
     update();
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -52,12 +54,12 @@ export default function ScrollPhone({ children }: { children: React.ReactNode })
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", update);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
       ref={containerRef}
-      style={{ willChange: "transform", transition: "transform 0.15s ease-out" }}
+      style={isMobile ? undefined : { willChange: "transform", transition: "transform 0.15s ease-out" }}
     >
       {children}
     </div>
